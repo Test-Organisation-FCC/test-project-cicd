@@ -1,5 +1,8 @@
 name: Call Main CiCd
 run-name: ${{ github.actor }} has launched the ${{ github.head_ref || github.ref_name }} pipeline for commit ${{github.sha}}
+env:
+  folder_uat: MainFolder # Modify this <<<---
+  folder_prd: MainFolder # Modify this <<<---
 on:
   push:
     branches: [ uat, prd ] # DO NOT CHANGE BRANCH NAME
@@ -7,8 +10,6 @@ jobs:
   download-latest-code:
     runs-on: uipath-cli
     env:
-      folder_uat: MainFolder # Modify this <<<---
-      folder_prd: MainFolder # Modify this <<<---
       BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
     steps:
       - name: Checkout the latest version of the current repo
