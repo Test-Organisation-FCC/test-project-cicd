@@ -3,10 +3,6 @@ run-name: ${{ github.actor }} has launched the ${{ github.head_ref || github.ref
 on:
   push:
     branches: [ uat, prd ] # DO NOT CHANGE BRANCH NAME
-env:
-  folder_uat: MainFolder # Modify this <<<---
-  folder_prd: MainFolder # Modify this <<<---
-
 jobs:
   download-latest-code:
     runs-on: uipath-cli
@@ -23,11 +19,12 @@ jobs:
         run: Write-Host ( "Change in branch ${{ env.BRANCH_NAME }}" + " ${{github.sha}}".Substring(0, 8) )
   call-workflow-passing-data:
     needs: download-latest-code
-    uses: Test-Organisation-FCC/cicd-primitives/.github/workflows/main-publish.yml@main
+    uses: Test-Organisation-FCC/cicd-primitives/.github/workflows/main-publish.yml
     with:
       environment: ${{ github.head_ref || github.ref_name }}
-      folder_uat: ${{ env.folder_uat }}
-      folder_prd: ${{ env.folder_prd }}
+      folder_uat: MainFolder # Modify this <<<---
+      folder_prd: MainFolder # Modify this <<<---
     secrets:
       CLIENT_ID: ${{ secrets.CLIENT_ID }}
       REFRESH_TOK: ${{ secrets.REFRESH_TOK }}
+
