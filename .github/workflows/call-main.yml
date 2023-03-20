@@ -22,9 +22,6 @@ jobs:
     uses: Test-Organisation-FCC/cicd-primitives/.github/workflows/main-publish.yml@main
     with:
       environment: ${{ github.head_ref || github.ref_name }}
-      folder_uat: MainFolder # Modify this <<<---
-      folder_prd: MainFolder # Modify this <<<---
-    secrets:
-      CLIENT_ID: ${{ secrets.CLIENT_ID }}
-      REFRESH_TOK: ${{ secrets.REFRESH_TOK }}
+      folder_uat: UAT # Modify this <<<---
+      folder_prd: PRD # Modify this <<<---
 
