@@ -3,6 +3,7 @@
   "description": "Test CiCd",
   "main": "Main.xaml",
   "dependencies": {
+    "BenefitTracking": "[1.0.0]",
     "UiPath.System.Activities": "[22.10.4]",
     "UiPath.Testing.Activities": "[22.10.3]",
     "UiPath.WebAPI.Activities": "[1.13.3]"
@@ -11,7 +12,7 @@
   "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "22.10.4.0",
-  "projectVersion": "1.2.2",
+  "projectVersion": "1.2.3",
   "runtimeOptions": {
     "autoDispose": false,
     "netFrameworkLazyLoading": false,
