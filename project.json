@@ -11,7 +11,7 @@
   "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "22.10.4.0",
-  "projectVersion": "1.2.0",
+  "projectVersion": "1.2.2",
   "runtimeOptions": {
     "autoDispose": false,
     "netFrameworkLazyLoading": false,
@@ -45,6 +45,18 @@
         "testCaseId": "c29a49f1-f01e-4d74-b3ff-73cff10d2028",
         "testCaseType": "TestCase",
         "fileName": "TestCases\\MainTestCase.xaml"
+      },
+      {
+        "editingStatus": "Publishable",
+        "testCaseId": "a5b5407a-992c-4fd8-9e97-de3437b73ce9",
+        "testCaseType": "TestCase",
+        "fileName": "TestCases\\AlwaysPass.xaml"
+      },
+      {
+        "editingStatus": "Publishable",
+        "testCaseId": "8814100e-037b-498f-af65-eda897ba1b0e",
+        "testCaseType": "TestCase",
+        "fileName": "TestCases\\SometimesFail.xaml"
       }
     ],
     "modernBehavior": false
