@@ -1,6 +1,6 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="MainTestCase" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1006,1454" sap2010:WorkflowViewState.IdRef="MainTestCase_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uta="clr-namespace:UiPath.Testing.Activities;assembly=UiPath.Testing.Activities" xmlns:utat="clr-namespace:UiPath.Testing.Activities.TestData;assembly=UiPath.Testing.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="MainTestCase" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1037,2529" sap2010:WorkflowViewState.IdRef="MainTestCase_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:b="clr-namespace:BenefitTracking;assembly=BenefitTracking" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uta="clr-namespace:UiPath.Testing.Activities;assembly=UiPath.Testing.Activities" xmlns:utat="clr-namespace:UiPath.Testing.Activities.TestData;assembly=UiPath.Testing.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="52">
+    <scg:List x:TypeArguments="x:String" Capacity="30">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -29,10 +29,12 @@
       <x:String>UiPath.Shared.Activities</x:String>
       <x:String>System.Reflection</x:String>
       <x:String>UiPath.Testing.Activities</x:String>
+      <x:String>BenefitTracking</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="27">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="28">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>System.Private.CoreLib</AssemblyReference>
@@ -59,9 +61,10 @@
       <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>BenefitTracking</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="MainTestCase" sap:VirtualizedContainerService.HintSize="462,1389" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="MainTestCase" sap:VirtualizedContainerService.HintSize="462,2464" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Decimal" Name="aRandomNum" />
     </Sequence.Variables>
@@ -91,13 +94,19 @@
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
     </Sequence>
-    <Sequence DisplayName="... Then" sap:VirtualizedContainerService.HintSize="400,512" sap2010:WorkflowViewState.IdRef="Sequence_4">
+    <Sequence DisplayName="... Then" sap:VirtualizedContainerService.HintSize="400,1587" sap2010:WorkflowViewState.IdRef="Sequence_4">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="x:Boolean" Name="aResult" />
+        <Variable x:TypeArguments="ui:CurrentJobInfo" Name="aCurrentJobInfo" />
+        <Variable x:TypeArguments="s:String[]" Name="aListOfOpCos" />
+        <Variable x:TypeArguments="s:String[]" Name="aListOfAreas" />
+      </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <uta:VerifyRange KeepScreenshots="{x:Null}" ScreenshotsPath="{x:Null}" ContinueOnFailure="False" DisplayName="Verify Test number against Range" sap:VirtualizedContainerService.HintSize="338,269" sap2010:WorkflowViewState.IdRef="VerifyRange_1" TakeScreenshotInCaseOfFailingAssertion="False" TakeScreenshotInCaseOfSucceedingAssertion="False" VerificationType="is within">
+      <uta:VerifyRange KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" ScreenshotsPath="{x:Null}" ContinueOnFailure="False" DisplayName="Verify Test number against Range" sap:VirtualizedContainerService.HintSize="338,641" sap2010:WorkflowViewState.IdRef="VerifyRange_1" Result="[aResult]" TakeScreenshotInCaseOfFailingAssertion="False" TakeScreenshotInCaseOfSucceedingAssertion="False" VerificationType="is within">
         <uta:VerifyRange.AlternativeVerificationTitle>
           <InArgument x:TypeArguments="x:String" />
         </uta:VerifyRange.AlternativeVerificationTitle>
@@ -107,16 +116,28 @@
         <uta:VerifyRange.LowerLimit>
           <InArgument x:TypeArguments="x:Object">[0]</InArgument>
         </uta:VerifyRange.LowerLimit>
-        <uta:VerifyRange.OutputMessageFormat>
-          <InArgument x:TypeArguments="x:String" />
-        </uta:VerifyRange.OutputMessageFormat>
-        <uta:VerifyRange.Result>
-          <OutArgument x:TypeArguments="x:Boolean" />
-        </uta:VerifyRange.Result>
         <uta:VerifyRange.UpperLimit>
           <InArgument x:TypeArguments="x:Object">[10]</InArgument>
         </uta:VerifyRange.UpperLimit>
       </uta:VerifyRange>
+      <ui:GetCurrentJobInfo DisplayName="Get Current Job Info" sap:VirtualizedContainerService.HintSize="338,25" sap2010:WorkflowViewState.IdRef="GetCurrentJobInfo_1" Result="[aCurrentJobInfo]" />
+      <Assign sap:VirtualizedContainerService.HintSize="338,61" sap2010:WorkflowViewState.IdRef="Assign_1">
+        <Assign.To>
+          <OutArgument x:TypeArguments="s:String[]">[aListOfOpCos]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="s:String[]">[{"BA","VY", "IB", "EI", "I2"}]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign sap:VirtualizedContainerService.HintSize="338,61" sap2010:WorkflowViewState.IdRef="Assign_2">
+        <Assign.To>
+          <OutArgument x:TypeArguments="s:String[]">[aListOfAreas]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="s:String[]">[{"Engineering","Finance", "IT", "Ground Ops", "Network and Planning"}]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <b:TrackBenefitToLogs BenefitAggregationLevel1="[aListOfOpCos(CInt(Rnd()*5))]" BenefitAggregationLevel2="[aListOfAreas(CInt(Rnd()*5))]" BenefitAmount="5" BenefitReason="[aCurrentJobInfo.ProcessName]" BenefitReference="[aCurrentJobInfo.WorkflowName]" BenefitUnit="minutes" sap:VirtualizedContainerService.HintSize="338,396" sap2010:WorkflowViewState.IdRef="TrackBenefitToLogs_1" TestStatus="[if(aResult,&quot;Passed&quot;,&quot;Failed&quot;)]" />
       <ui:LogMessage DisplayName="Log Message out" sap:VirtualizedContainerService.HintSize="338,92" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Finishing test case&quot;]" />
     </Sequence>
   </Sequence>
