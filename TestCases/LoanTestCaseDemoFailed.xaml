@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="LoanTestCaseDemo" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1037,2465" sap2010:WorkflowViewState.IdRef="LoanTestCaseDemo_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:b="clr-namespace:BenefitTracking;assembly=BenefitTracking" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uta="clr-namespace:UiPath.Testing.Activities;assembly=UiPath.Testing.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="LoanTestCaseDemo" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1006,1657" sap2010:WorkflowViewState.IdRef="LoanTestCaseDemo_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uta="clr-namespace:UiPath.Testing.Activities;assembly=UiPath.Testing.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="38">
       <x:String>System.Activities</x:String>
@@ -98,7 +98,7 @@
       <AssemblyReference>BenefitTracking</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="LoanTestCaseDemo" sap:VirtualizedContainerService.HintSize="602,2400" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="LoanTestCaseDemo" sap:VirtualizedContainerService.HintSize="602,1592" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="WhattoValidate" />
     </Sequence.Variables>
@@ -126,7 +126,7 @@
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
     </Sequence>
-    <Sequence DisplayName="... Then" sap:VirtualizedContainerService.HintSize="540,1882" sap2010:WorkflowViewState.IdRef="Sequence_4">
+    <Sequence DisplayName="... Then" sap:VirtualizedContainerService.HintSize="540,1074" sap2010:WorkflowViewState.IdRef="Sequence_4">
       <Sequence.Variables>
         <Variable x:TypeArguments="ui:CurrentJobInfo" Name="aCurrentJobInfo" />
         <Variable x:TypeArguments="x:Boolean" Name="aResult" />
@@ -175,7 +175,7 @@
           </Sequence>
         </If.Else>
       </If>
-      <uta:VerifyExpressionWithOperator KeepScreenshots="{x:Null}" ScreenshotsPath="{x:Null}" ContinueOnFailure="True" DisplayName="Verify Expression with Operator" sap:VirtualizedContainerService.HintSize="478,590" sap2010:WorkflowViewState.IdRef="VerifyExpressionWithOperator_1" Operator="Equality" Result="[aResult]" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="False">
+      <uta:VerifyExpressionWithOperator KeepScreenshots="{x:Null}" ScreenshotsPath="{x:Null}" ContinueOnFailure="True" DisplayName="Verify Expression with Operator" sap:VirtualizedContainerService.HintSize="478,218" sap2010:WorkflowViewState.IdRef="VerifyExpressionWithOperator_1" Operator="Equality" Result="[aResult]" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="False">
         <uta:VerifyExpressionWithOperator.AlternativeVerificationTitle>
           <InArgument x:TypeArguments="x:String" />
         </uta:VerifyExpressionWithOperator.AlternativeVerificationTitle>
@@ -190,7 +190,6 @@
         </uta:VerifyExpressionWithOperator.SecondExpression>
       </uta:VerifyExpressionWithOperator>
       <ui:GetCurrentJobInfo DisplayName="Get Current Job Info" sap:VirtualizedContainerService.HintSize="478,25" sap2010:WorkflowViewState.IdRef="GetCurrentJobInfo_1" Result="[aCurrentJobInfo]" />
-      <b:TrackBenefitToLogs BenefitAggregationLevel1="BA" BenefitAggregationLevel2="Engineering" BenefitAmount="3" BenefitReason="[aCurrentJobInfo.ProcessName]" BenefitReference="[aCurrentJobInfo.WorkflowName]" BenefitUnit="minutes" sap:VirtualizedContainerService.HintSize="478,396" sap2010:WorkflowViewState.IdRef="TrackBenefitToLogs_1" TestStatus="[if(aResult,&quot;Passed&quot;,&quot;Failed&quot;)]" />
     </Sequence>
   </Sequence>
 </Activity>
