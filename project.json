@@ -6,19 +6,20 @@
     "BenefitTracking": "[1.0.0]",
     "UiPath.System.Activities": "[22.10.4]",
     "UiPath.Testing.Activities": "[22.10.3]",
+    "UiPath.UIAutomation.Activities": "[22.10.5]",
     "UiPath.WebAPI.Activities": "[1.13.3]"
   },
   "webServices": [],
   "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "22.10.4.0",
-  "projectVersion": "1.2.4",
+  "projectVersion": "1.2.6",
   "runtimeOptions": {
     "autoDispose": false,
     "netFrameworkLazyLoading": false,
     "isPausable": true,
     "isAttended": false,
-    "requiresUserInteraction": false,
+    "requiresUserInteraction": true,
     "supportsPersistence": false,
     "excludedLoggedData": [
       "Private:*",
@@ -43,21 +44,15 @@
     "fileInfoCollection": [
       {
         "editingStatus": "Publishable",
-        "testCaseId": "c29a49f1-f01e-4d74-b3ff-73cff10d2028",
+        "testCaseId": "25e9d76f-44e0-45f8-bae7-0fe32a6d574d",
         "testCaseType": "TestCase",
-        "fileName": "TestCases\\MainTestCase.xaml"
+        "fileName": "TestCases\\LoanTestCaseDemoFailed.xaml"
       },
       {
         "editingStatus": "Publishable",
-        "testCaseId": "a5b5407a-992c-4fd8-9e97-de3437b73ce9",
+        "testCaseId": "1e6f3cd6-4b51-46a7-b320-3bb967dd86f3",
         "testCaseType": "TestCase",
-        "fileName": "TestCases\\AlwaysPass.xaml"
-      },
-      {
-        "editingStatus": "Publishable",
-        "testCaseId": "8814100e-037b-498f-af65-eda897ba1b0e",
-        "testCaseType": "TestCase",
-        "fileName": "TestCases\\SometimesFail.xaml"
+        "fileName": "TestCases\\LoanTestCaseDemoPass.xaml"
       }
     ],
     "modernBehavior": false
