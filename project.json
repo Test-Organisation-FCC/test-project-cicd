@@ -3,7 +3,6 @@
   "description": "Test CiCd",
   "main": "Main.xaml",
   "dependencies": {
-    "BenefitTracking": "[1.0.0]",
     "UiPath.System.Activities": "[22.10.4]",
     "UiPath.Testing.Activities": "[22.10.3]",
     "UiPath.UIAutomation.Activities": "[22.10.5]",
