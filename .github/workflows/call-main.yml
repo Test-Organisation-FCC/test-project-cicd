@@ -2,7 +2,7 @@ name: Call Main CiCd
 run-name: ${{ github.actor }} has launched the ${{ github.head_ref || github.ref_name }} pipeline for commit ${{github.sha}}
 on:
   push:
-    branches: [ uat, prd ] # DO NOT CHANGE BRANCH NAME
+    branches: [ dev, uat, prd ] # DO NOT CHANGE BRANCH NAME
 jobs:
   download-latest-code:
     runs-on: uipath-cli
@@ -22,6 +22,7 @@ jobs:
     uses: Test-Organisation-FCC/cicd-primitives/.github/workflows/main-publish.yml@main
     with:
       environment: ${{ github.head_ref || github.ref_name }}
+      folder_dev: DEV # Modify this <<<---
       folder_uat: UAT # Modify this <<<---
       folder_prd: PRD # Modify this <<<---
     secrets:
