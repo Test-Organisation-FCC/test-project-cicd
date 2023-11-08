@@ -12,7 +12,7 @@
   "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "22.10.4.0",
-  "projectVersion": "1.2.11",
+  "projectVersion": "1.2.12",
   "runtimeOptions": {
     "autoDispose": false,
     "netFrameworkLazyLoading": false,
