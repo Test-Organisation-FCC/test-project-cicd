@@ -1,0 +1,9 @@
+{
+  "issueKeyTestcaseValues": {},
+  "testManagerBasePath": "https://staging.uipath.com/benefittrackingdemo/DefaultTenant/testmanager_",
+  "defaultProject": {
+    "id": "391fcc2a-1a55-0000-e2fc-0b460fa3efa4",
+    "name": "TestCiCd",
+    "key": "TCC"
+  }
+}
